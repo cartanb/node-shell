@@ -3,15 +3,25 @@ const ls = require("./ls");
 const cat = require("./cat");
 const curl = require("./curl");
 
+
+const done = (output) => {
+  process.stdout.write(output);
+  process.stdout.write("\nprompt > ");
+}
+
+
 //output a prompt
 process.stdout.write("prompt > ");
+
+
 
 //stdin 'data' event fires after user types a line
 process.stdin.on("data", (data) => {
   const cmd = data.toString().trim();
   if (cmd === "pwd") {
-    pwd();
+    done(pwd());
   } else if (cmd === "ls") {
+    // done(ls())
     ls();
   } else if (cmd.slice(0, 4) === "cat ") {
     const fileName = cmd.slice(4);

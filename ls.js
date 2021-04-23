@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = function () {
   fs.readdir('./', 'utf8', (err, files) => {
 
-    console.log("files", files)
+    // console.log("files", files)
     if(err){
       throw err
     } else {

@@ -1,7 +1,6 @@
 const fs = require('fs');
-const done = require('./done');
 
-module.exports = () => {
+module.exports = (done) => {
     fs.readdir('./', 'utf8', (err, files) => {
     if(err){
       throw err

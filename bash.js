@@ -20,10 +20,10 @@ process.stdin.on("data", (data) => {
     ls(done);
   } else if (cmd.slice(0, 4) === "cat ") {
     const fileName = cmd.slice(4);
-    cat(fileName);
+    cat(fileName, done);
   } else if (cmd.slice(0, 5) === "curl ") {
     const webAddress = cmd.slice(5);
-    curl(webAddress);
+    curl(webAddress, done);
   } else {
     process.stdout.write("You typed: " + cmd);
     process.stdout.write("\nprompt > ");

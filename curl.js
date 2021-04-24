@@ -1,11 +1,11 @@
 const request = require("request");
 
-module.exports = function (webAddress) {
+module.exports = function (webAddress, done) {
   request(webAddress, (err, response, body) => {
     if (err) {
       throw err;
     } else {
-      return body;
+      done(body);
     }
   });
 };
